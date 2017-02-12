@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.6"
+  },
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",

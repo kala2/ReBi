@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var del = require('del');
-var tslint = require('tslint');
+var tslint = require('gulp-tslint');
 
 var config = {
     //Include all js files but exclude any min.js files
@@ -33,10 +33,14 @@ gulp.task('watch', function () {
     return gulp.watch(config.src, ['scripts', 'app']);
 });
 
-gulp.task("tslint", function () {
-    return gulp.src(["app/**/*.ts"])
-               .pipe(tslint())
-               .pipe(tslint.report("verbose"));
+gulp.task('tslint', function () {
+    gulp.src('App/**/*.ts')
+        .pipe(tslint({
+            formatter: 'msbuild'
+        }))
+        .pipe(tslint.report({
+            emitError: false
+        }));
 });
 
 //Set a default tasks

@@ -1,11 +1,9 @@
 ﻿/// <reference path="../common/common.ts" />
-'use strict';
+"use strict";
 
-module App.Controllers
-{
+namespace App.Controllers {
 
-    export interface IShellCtrl
-    {
+    export interface IShellCtrl {
         busyMessage: string;
         isBusy: boolean;
         spinnerOperations: {
@@ -17,17 +15,16 @@ module App.Controllers
             corners: number;
             trail: number;
             color: string;
-        }
+        };
         toggleSpinner(on: boolean): void;
     }
 
-    export class ShellCtrl implements IShellCtrl
-    {
-        public static controllerId = 'shellCtrl';
-        //#region Variables
-        busyMessage = 'Please wait...';
+    export class ShellCtrl implements IShellCtrl {
+        public static controllerId = "shellCtrl";
+        // #region letiables
+        busyMessage = "Please wait...";
         controllerId = ShellCtrl.controllerId;
-        isBusy= true;
+        isBusy = true;
         spinnerOperations = {
             radius: 40,
             lines: 7,
@@ -36,15 +33,14 @@ module App.Controllers
             speed: 1.7,
             corners: 1.0,
             trail: 100,
-            color: '#F58A00'
-        }
+            color: "#F58A00"
+        };
         private common: App.Shared.ICommon;
         private config: any;
         private $rootScope: any;
-        //#endregion
+        // #endregion
 
-        constructor($rootScope: any, common: App.Shared.ICommon, config: any)
-        {
+        constructor($rootScope: any, common: App.Shared.ICommon, config: any) {
             this.common = common;
             this.config = config;
             this.$rootScope = $rootScope;
@@ -56,18 +52,16 @@ module App.Controllers
             this.isBusy = on;
         }
 
-        private activate()
-        {
-            var logger = this.common.logger.getLogFn(this.controllerId, 'success');
-            logger('Hot Towel Angular loaded!', null, true);
+        private activate() {
+            let logger = this.common.logger.getLogFn(this.controllerId, "success");
+            logger("Hot Towel Angular loaded!", null, true);
 
             this.common.activateController([], this.controllerId);
         }
 
-        private registerEvents()
-        {
-            var events = this.config.events;
-            this.$rootScope.$on('$routeChangeStart',
+        private registerEvents() {
+            let events = this.config.events;
+            this.$rootScope.$on("$routeChangeStart",
                 (event, next, current) => { this.toggleSpinner(true); }
             );
 
@@ -85,6 +79,6 @@ module App.Controllers
 
     // Register with angular
     app.controller(ShellCtrl.controllerId,
-        ['$rootScope', 'common', 'config',
+        ["$rootScope", "common", "config",
             ($rS, com, con) => new ShellCtrl($rS, com, con)]);
 }

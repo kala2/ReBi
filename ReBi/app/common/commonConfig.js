@@ -1,5 +1,5 @@
 /// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
-'use strict';
+"use strict";
 var App;
 (function (App) {
     var Shared;
@@ -12,10 +12,9 @@ var App;
                     return { config: _this.config };
                 };
             }
-            CommonConfig.providerId = 'commonConfig';
+            CommonConfig.providerId = "commonConfig";
             return CommonConfig;
         }());
         Shared.commonModule.provider(CommonConfig.providerId, function () { return new CommonConfig(); });
     })(Shared = App.Shared || (App.Shared = {}));
 })(App || (App = {}));
-//# sourceMappingURL=commonConfig.js.map

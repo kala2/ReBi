@@ -2,41 +2,35 @@
 /// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../scripts/typings/jquery/jquery.d.ts" />
 
-'use strict';
+"use strict";
 
-module App.Directives
-{
+namespace App.Directives {
     // Opens and closes the sidebar menu.
     // Usage:
     //  <div data-cc-sidebar>
     // Creates:
     //  <div data-cc-sidebar class="sidebar">
-    interface ICcSidebar extends ng.IDirective
-    {
+    interface ICcSidebar extends ng.IDirective {
     }
 
-    interface ICcSidebarScope extends ng.IScope
-    {
-      
+    interface ICcSidebarScope extends ng.IScope {
+
     }
 
-    class CcSidebar implements ICcSidebar
-    {
-        static directiveId: string = 'ccSidebar';
+    class CcSidebar implements ICcSidebar {
+        static directiveId: string = "ccSidebar";
         restrict: string = "A";
 
-        constructor()
-        {
+        constructor() {
         }
 
-        link = (scope: ICcSidebarScope, element, attrs) =>
-        {
-            var $sidebarInner = element.find('.sidebar-inner');
+        link = (scope: ICcSidebarScope, element, attrs) => {
+            let $sidebarInner = element.find(".sidebar-inner");
 
-            var $dropdownElement = element.find('.sidebar-dropdown a');
-            element.addClass('sidebar');
+            let $dropdownElement = element.find(".sidebar-dropdown a");
+            element.addClass("sidebar");
             $dropdownElement.click(dropdown);
-            var dropClass = 'dropy';
+            let dropClass = "dropy";
 
             function dropdown(e) {
                 e.preventDefault();
@@ -53,11 +47,11 @@ module App.Directives
             }
             function hideAllSidebars() {
                 $sidebarInner.slideUp(350);
-                $('.sidebar-dropdown a').removeClass(dropClass);
-            }   
+                $(".sidebar-dropdown a").removeClass(dropClass);
+            }
         }
     }
 
-//References angular app
+    // References angular app
     app.directive(CcSidebar.directiveId, [() => new CcSidebar()]);
-} 
+}

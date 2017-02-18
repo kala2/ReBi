@@ -1,7 +1,7 @@
 /// <reference path="../app.ts" />
 /// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../scripts/typings/jquery/jquery.d.ts" />
-'use strict';
+"use strict";
 var App;
 (function (App) {
     var Directives;
@@ -22,11 +22,10 @@ var App;
                     }, true);
                 };
             }
-            CcSpinner.directiveId = 'ccSpinner';
+            CcSpinner.directiveId = "ccSpinner";
             return CcSpinner;
         }());
         // Register in angular app
-        App.app.directive(CcSpinner.directiveId, ['$window', function ($window) { return new CcSpinner($window); }]);
+        App.app.directive(CcSpinner.directiveId, ["$window", function ($window) { return new CcSpinner($window); }]);
     })(Directives = App.Directives || (App.Directives = {}));
 })(App || (App = {}));
-//# sourceMappingURL=cc-spinner.js.map

@@ -1,7 +1,7 @@
 /// <reference path="../app.ts" />
 /// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../scripts/typings/jquery/jquery.d.ts" />
-'use strict';
+"use strict";
 var App;
 (function (App) {
     var Directives;
@@ -16,31 +16,30 @@ var App;
                     // <li class="nlightblue fade-selection-animation" data-ng-class="vm.isCurrent(r)"
                     // data-ng-repeat = "r in vm.navRoutes" >
                     // <a href = "#{{r.url}}" data-ng-bind-html = "r.config.settings.content" data-cc-menu-item-rendered >< / a >
-                    // app.directive('ccMenuItemRendered',['$timeout', ccMenuItemRendered]);
+                    // app.directive("ccMenuItemRendered",["$timeout", ccMenuItemRendered]);
                     // inspiration: http://stackoverflow.com/questions/15207788/calling-a-function-when-ng-repeat-has-finished
                     if (scope.$last === true) {
                         _this.$timeout(function () {
                             scope.$emit(attrs.onFinishRender);
-                            var $menuItem = element.parent().parent().find('a');
+                            var $menuItem = element.parent().parent().find("a");
                             $menuItem.click(function () {
-                                if ($('.sidebar-dropdown a').hasClass('dropy')) {
+                                if ($(".sidebar-dropdown a").hasClass("dropy")) {
                                     hideDropDown();
                                 }
                             });
                         });
                     }
                     function hideDropDown() {
-                        var $sidebarInner = $('.sidebar-inner');
+                        var $sidebarInner = $(".sidebar-inner");
                         $sidebarInner.slideUp(350);
-                        $('.sidebar-dropdown a').removeClass('dropy');
+                        $(".sidebar-dropdown a").removeClass("dropy");
                     }
                 };
             }
-            CcMenuItemRendered.directiveId = 'ccMenuItemRendered';
+            CcMenuItemRendered.directiveId = "ccMenuItemRendered";
             return CcMenuItemRendered;
         }());
         // register in angular app
-        App.app.directive(CcMenuItemRendered.directiveId, ['$timeout', function ($timeout) { return new CcMenuItemRendered($timeout); }]);
+        App.app.directive(CcMenuItemRendered.directiveId, ["$timeout", function ($timeout) { return new CcMenuItemRendered($timeout); }]);
     })(Directives = App.Directives || (App.Directives = {}));
 })(App || (App = {}));
-//# sourceMappingURL=cc-menu-item-rendered.js.map

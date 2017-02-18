@@ -1,42 +1,40 @@
 ﻿/// <reference path="../common/common.ts" />
-'use strict';
+"use strict";
 
-module App.Controllers{
+namespace App.Controllers {
 
     export interface IAdminCtrl {
-        common:App.Shared.ICommon;
+        common: App.Shared.ICommon;
         controllerId: string;
-        title:string;
+        title: string;
     }
 
     export class AdminCtrl implements IAdminCtrl {
-        public static controllerId = 'adminCtrl';
-        //#region variables
+        public static controllerId = "adminCtrl";
+        //#region letiables
         common: App.Shared.ICommon;
         controllerId: string;
         private log: Function;
         title: string;
         //#endregion
-        constructor(common: App.Shared.ICommon)
-        {
+        constructor(common: App.Shared.ICommon) {
             this.common = common;
             this.controllerId = AdminCtrl.controllerId;
             this.title = "Admin";
             this.log = this.common.logger.getLogFn(AdminCtrl.controllerId);
             this.activate([]);
-        } 
+        }
         //#region private methods
-        private activate(promises:Array<ng.IPromise<any>>):void
-        {
+        private activate(promises: Array<ng.IPromise<any>>): void {
             this.common.activateController([], AdminCtrl.controllerId)
-                .then(() => { this.log('Activated Admin View'); });
+                .then(() => { this.log("Activated Admin View"); });
         }
         //#endregion
     }
 
     // Register with angular
     app.controller(AdminCtrl.controllerId,
-        ['common', (common) => new AdminCtrl(common)]);
-    
+        ["common", (common) => new AdminCtrl(common)]);
+
 
 }

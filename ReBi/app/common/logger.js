@@ -1,11 +1,11 @@
 /// <reference path="common.ts" />
-'use strict';
+"use strict";
 var App;
 (function (App) {
     var Shared;
     (function (Shared) {
         var Logger = (function () {
-            //#endregion
+            // #endregion
             function Logger($log) {
                 this.service = {
                     getLogFn: this.getLogFn,
@@ -16,23 +16,23 @@ var App;
                 };
                 this.$log = $log;
             }
-            //#region Public Methods
-            //TODO: see if there is a way to solve this more intuitive than returning an anonymous function
+            // #region Public Methods
+            // TODO: see if there is a way to solve this more intuitive than returning an anonymous function
             Logger.prototype.getLogFn = function (moduleId, logFunctionName) {
                 var _this = this;
-                logFunctionName = logFunctionName || 'log';
+                logFunctionName = logFunctionName || "log";
                 switch (logFunctionName.toLowerCase()) {
-                    case 'success':
-                        logFunctionName = 'logSuccess';
+                    case "success":
+                        logFunctionName = "logSuccess";
                         break;
-                    case 'error':
-                        logFunctionName = 'logError';
+                    case "error":
+                        logFunctionName = "logError";
                         break;
-                    case 'warn':
-                        logFunctionName = 'logWarning';
+                    case "warn":
+                        logFunctionName = "logWarning";
                         break;
-                    case 'warning':
-                        logFunctionName = 'logWarning';
+                    case "warning":
+                        logFunctionName = "logWarning";
                         break;
                 }
                 return function (msg, data, showToast) {
@@ -41,30 +41,30 @@ var App;
                 };
             };
             Logger.prototype.log = function (message, data, source, showToast) {
-                this.logIt(message, data, source, showToast, 'info');
+                this.logIt(message, data, source, showToast, "info");
             };
             Logger.prototype.logWarning = function (message, data, source, showToast) {
-                this.logIt(message, data, source, showToast, 'warning');
+                this.logIt(message, data, source, showToast, "warning");
             };
             Logger.prototype.logSuccess = function (message, data, source, showToast) {
-                this.logIt(message, data, source, showToast, 'success');
+                this.logIt(message, data, source, showToast, "success");
             };
             Logger.prototype.logError = function (message, data, source, showToast) {
-                this.logIt(message, data, source, showToast, 'error');
+                this.logIt(message, data, source, showToast, "error");
             };
-            //#endregion
+            // #endregion
             Logger.prototype.logIt = function (message, data, source, showToast, toastType) {
-                var write = (toastType === 'error') ? this.$log.error : this.$log.log;
-                source = source ? '[' + source + '] ' : '';
+                var write = (toastType === "error") ? this.$log.error : this.$log.log;
+                source = source ? "[" + source + "] " : "";
                 write(source, message, data);
                 if (showToast) {
-                    if (toastType === 'error') {
+                    if (toastType === "error") {
                         toastr.error(message);
                     }
-                    else if (toastType === 'warning') {
+                    else if (toastType === "warning") {
                         toastr.warning(message);
                     }
-                    else if (toastType === 'success') {
+                    else if (toastType === "success") {
                         toastr.success(message);
                     }
                     else {
@@ -72,12 +72,11 @@ var App;
                     }
                 }
             };
-            Logger.serviceId = 'logger';
+            Logger.serviceId = "logger";
             return Logger;
         }());
         Shared.Logger = Logger;
         // Register with angular
-        Shared.commonModule.factory(Logger.serviceId, ['$log', function ($log) { return new Logger($log); }]);
+        Shared.commonModule.factory(Logger.serviceId, ["$log", function ($log) { return new Logger($log); }]);
     })(Shared = App.Shared || (App.Shared = {}));
 })(App || (App = {}));
-//# sourceMappingURL=logger.js.map

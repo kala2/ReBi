@@ -1,5 +1,5 @@
 /// <reference path="../../scripts/typings/breeze/breeze.d.ts" />
-'use strict';
+"use strict";
 var App;
 (function (App) {
     var Services;
@@ -27,11 +27,10 @@ var App;
             EntityManagerFactory.prototype.preventValidateOnAttach = function () {
                 new breeze.ValidationOptions({ validateOnAttach: false }).setAsDefault();
             };
-            EntityManagerFactory.serviceId = 'entityManagerFactory';
+            EntityManagerFactory.serviceId = "entityManagerFactory";
             return EntityManagerFactory;
         }());
         Services.EntityManagerFactory = EntityManagerFactory;
-        App.app.factory(EntityManagerFactory.serviceId, ['breeze', 'config', function (b, c) { return new EntityManagerFactory(b, c); }]);
+        App.app.factory(EntityManagerFactory.serviceId, ["breeze", "config", function (b, c) { return new EntityManagerFactory(b, c); }]);
     })(Services = App.Services || (App.Services = {}));
 })(App || (App = {}));
-//# sourceMappingURL=entityManagerFactory.js.map

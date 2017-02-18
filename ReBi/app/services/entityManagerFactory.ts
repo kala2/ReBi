@@ -1,26 +1,20 @@
 ﻿/// <reference path="../../scripts/typings/breeze/breeze.d.ts" />
-'use strict';
+"use strict";
 
-module App.Services
-{
+namespace App.Services {
 
-
-    export interface IEntityManagerFactory
-    {
-        newManager(): breeze.EntityManager
+    export interface IEntityManagerFactory {
+        newManager(): breeze.EntityManager;
     }
 
-
-    export class EntityManagerFactory
-    {
-        public static serviceId = 'entityManagerFactory';
+    export class EntityManagerFactory {
+        public static serviceId = "entityManagerFactory";
         metadataStore: any;
         serviceName: any;
         private breeze: any;
         private config: any;
 
-        constructor(breeze, config)
-        {
+        constructor(breeze, config) {
             this.breeze = breeze;
             this.config = config;
             this.setNamingConventionToCamelCase();
@@ -29,9 +23,8 @@ module App.Services
             this.serviceName = config.remoteServiceName;
         }
 
-        public newManager(): breeze.EntityManager
-        {
-            var mgr = new breeze.EntityManager({
+        public newManager(): breeze.EntityManager {
+            let mgr = new breeze.EntityManager({
                 serviceName: this.serviceName,
                 metadataStore: this.metadataStore
             });
@@ -39,18 +32,16 @@ module App.Services
             return mgr;
         }
 
-        private setNamingConventionToCamelCase(): void
-        {
+        private setNamingConventionToCamelCase(): void {
             // Convert server - side PascalCase to client - side camelCase property names
             breeze.NamingConvention.camelCase.setAsDefault();
         }
 
-        private preventValidateOnAttach()
-        {
+        private preventValidateOnAttach() {
             new breeze.ValidationOptions({ validateOnAttach: false }).setAsDefault();
         }
     }
 
     app.factory(EntityManagerFactory.serviceId,
-        ['breeze', 'config',(b, c) => new EntityManagerFactory(b, c)]);
+        ["breeze", "config", (b, c) => new EntityManagerFactory(b, c)]);
 }

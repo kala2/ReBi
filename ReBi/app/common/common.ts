@@ -1,32 +1,32 @@
-﻿'use strict';
-module App.Shared {
+﻿"use strict";
+namespace App.Shared {
 
     export interface ICommon {
         throttles: Object;
-        activateController(promises: Array<ng.IPromise<any>>, controllerId: string)
+        activateController(promises: Array<ng.IPromise<any>>, controllerId: string);
         $broadcast(event: string, data: any);
         createSearchThrottle(viewmodel: any, list: string, filteredList: string, filter: string, delay: number): Function;
         debouncedThrottle(key: string, callback: Function, delay: number, immediate: boolean): void;
         isNumber(val: any): boolean;
-        textContains(text: string, searchText: string): boolean
+        textContains(text: string, searchText: string): boolean;
         $q: ng.IQService;
         $rootScope: ng.IRootScopeService;
         $timeout: ng.ITimeoutService;
         commonConfig: any;
-        logger:ILogger;
+        logger: ILogger;
     }
 
     export class Common implements ICommon {
-        public static serviceId: string = 'common';
+        public static serviceId: string = "common";
 
-        //#region variables
+        //#region letiables
         commonConfig: ICommonConfig;
         logger: ILogger;
-        throttles : Object;
+        throttles: Object;
         $rootScope: ng.IRootScopeService;
         $timeout: ng.ITimeoutService;
         $q: ng.IQService;
-       
+
         //#endregion
 
         constructor($q, $rootScope, $timeout, commonConfig, logger) {
@@ -43,9 +43,8 @@ module App.Shared {
             return this.$q.all(promises).then(this.broadcastSuccessEvent(controllerId));
         }
 
-        private broadcastSuccessEvent(controllerId)
-        {
-            var data = { controllerId: controllerId };
+        private broadcastSuccessEvent(controllerId) {
+            let data = { controllerId: controllerId };
             return this.$broadcast(this.commonConfig.config.controllerActivateSuccessEvent, data);
         }
 
@@ -54,24 +53,25 @@ module App.Shared {
         }
 
         public createSearchThrottle(viewmodel: any, list: string, filteredList: string, filter: string, delay: number): Function {
-            // After a delay, search a viewmodel's list using 
-            // a filter function, and return a filteredList.
 
+            // After a delay, search a viewmodel"s list using
+            // a filter function, and return a filteredList.
             // custom delay or use default
             delay = +delay || 300;
-            // if only vm and list parameters were passed, set others by naming convention 
+
+            // if only vm and list parameters were passed, set others by naming convention
             if (!filteredList) {
                 // assuming list is named sessions, filteredList is filteredSessions
-                filteredList = 'filtered' + list[0].toUpperCase() + list.substr(1).toLowerCase(); // string
+                filteredList = "filtered" + list[0].toUpperCase() + list.substr(1).toLowerCase(); // string
                 // filter function is named sessionFilter
-                filter = list + 'Filter'; // function in string form
+                filter = list + "Filter"; // function in string form
             }
 
             // create the filtering function we will call from here
-            var filterFn = () => {
+            let filterFn = () => {
+
                 // translates to ...
-                // vm.filteredSessions 
-                //      = vm.sessions.filter(function(item( { returns vm.sessionFilter (item) } );
+                // vm.filteredSessions = vm.sessions.filter(function(item( { returns vm.sessionFilter (item) } );
                 viewmodel[filteredList] = viewmodel[list].filter
                     (
                     item => viewmodel[filter](item)
@@ -79,11 +79,12 @@ module App.Shared {
             };
 
             return (() => {
-                // Wrapped in outer IFFE so we can use closure 
-                // over filterInputTimeout which references the timeout
-                var filterInputTimeout;
 
-                // return what becomes the 'applyFilter' function in the controller
+                // Wrapped in outer IFFE so we can use closure
+                // over filterInputTimeout which references the timeout
+                let filterInputTimeout;
+
+                // return what becomes the "applyFilter" function in the controller
                 return searchNow => {
                     if (filterInputTimeout) {
                         this.$timeout.cancel(filterInputTimeout);
@@ -99,11 +100,11 @@ module App.Shared {
         }
 
         public debouncedThrottle(key: string, callback: Function, delay: number, immediate: boolean): void {
-            // Perform some action (callback) after a delay. 
-            // Track the callback by key, so if the same callback 
-            // is issued again, restart the delay.
 
-            var defaultDelay = 1000;
+            // Perform some action (callback) after a delay.
+            // Track the callback by key, so if the same callback
+            // is issued again, restart the delay.
+            let defaultDelay = 1000;
             delay = delay || defaultDelay;
             if (this.throttles[key]) {
                 this.$timeout.cancel(this.throttles[key]);
@@ -124,16 +125,13 @@ module App.Shared {
         textContains(text: string, searchText: string): boolean {
             return text && -1 !== text.toLowerCase().indexOf(searchText.toLowerCase());
         }
-        //#endregion
-
-
+        // #endregion
     }
-        
+
     // Creates "common" service
     commonModule.factory(Common.serviceId, [
-        '$q', '$rootScope', '$timeout', 'commonConfig', 'logger',
+        "$q", "$rootScope", "$timeout", "commonConfig", "logger",
         ($q, $rS, $to, cC, l) => new Common($q, $rS, $to, cC, l)
     ]);
-        
 
 }

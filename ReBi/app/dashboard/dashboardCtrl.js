@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 var App;
 (function (App) {
     var Controllers;
@@ -6,7 +6,7 @@ var App;
         var DashboardCtrl = (function () {
             //#endregion
             function DashboardCtrl(common, datacontext) {
-                //#region Variables
+                //#region letiables
                 this.controllerId = DashboardCtrl.controllerId;
                 this.people = [];
                 this.common = common;
@@ -20,14 +20,14 @@ var App;
             DashboardCtrl.prototype.activate = function (promises) {
                 var _this = this;
                 this.common.activateController(promises, this.controllerId)
-                    .then(function () { _this.log('Activated Dashboard View'); });
+                    .then(function () { _this.log("Activated Dashboard View"); });
             };
             //#region Public Methods
             DashboardCtrl.prototype.getNews = function () {
                 return {
                     title: "Hot Towel Typescript",
-                    description: 'Hot Towel Typescript is a SPA template using Angular, Breeze and Typescript. '
-                        + 'This is a conversion of John Papas HotTowel.Angular.Breeze package'
+                    description: "Hot Towel Typescript is a SPA template using Angular, Breeze and Typescript. "
+                        + "This is a conversion of John Papas HotTowel.Angular.Breeze package"
                 };
             };
             DashboardCtrl.prototype.getMessageCount = function () {
@@ -42,14 +42,13 @@ var App;
                     return _this.people = data;
                 });
             };
-            DashboardCtrl.controllerId = 'dashboardCtrl';
+            DashboardCtrl.controllerId = "dashboardCtrl";
             return DashboardCtrl;
         }());
         Controllers.DashboardCtrl = DashboardCtrl;
         // register controller with angular
-        App.app.controller(DashboardCtrl.controllerId, ['common', 'datacontext',
+        App.app.controller(DashboardCtrl.controllerId, ["common", "datacontext",
             function (c, dc) { return new App.Controllers.DashboardCtrl(c, dc); }
         ]);
     })(Controllers = App.Controllers || (App.Controllers = {}));
 })(App || (App = {}));
-//# sourceMappingURL=dashboardCtrl.js.map

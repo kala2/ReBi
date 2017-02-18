@@ -2,50 +2,42 @@
 /// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../scripts/typings/jquery/jquery.d.ts" />
 
-'use strict';
-module App.Directives
-{
+"use strict";
+namespace App.Directives {
     // Description:
-    //  Creates a new Spinner and sets its options
+    // Creates a new Spinner and sets its options
     // Usage:
-    //  <div data-cc-spinner="vm.spinnerOptions"></div>
-    interface ICcSpinner extends ng.IDirective
-    {
+    // <div data-cc-spinner="vm.spinnerOptions"></div>
+    interface ICcSpinner extends ng.IDirective {
     }
 
-    interface ICcSpinnerScope extends ng.IScope
-    {
-        spinner:any;
+    interface ICcSpinnerScope extends ng.IScope {
+        spinner: any;
     }
 
-    interface ISpinnerWindowService extends ng.IWindowService
-    {
+    interface ISpinnerWindowService extends ng.IWindowService {
         Spinner: any;
     }
 
-    class CcSpinner implements ICcSpinner
-    {
-        static directiveId: string = 'ccSpinner';
+    class CcSpinner implements ICcSpinner {
+        static directiveId: string = "ccSpinner";
         restrict: string = "A";
 
-        constructor(private $window: ISpinnerWindowService)
-        {
+        constructor(private $window: ISpinnerWindowService) {
         }
 
-        link = (scope: ICcSpinnerScope, element, attrs) =>
-        {
+        link = (scope: ICcSpinnerScope, element, attrs) => {
             scope.spinner = null;
-            scope.$watch(attrs.ccSpinner,  (options)=> {
+            scope.$watch(attrs.ccSpinner, (options) => {
                 if (scope.spinner) {
                     scope.spinner.stop();
                 }
                 scope.spinner = new this.$window.Spinner(options);
                 scope.spinner.spin(element[0]);
             }, true);
-            
         }
     }
 
     // Register in angular app
-    app.directive(CcSpinner.directiveId, ['$window', $window => new CcSpinner($window)]);
-} 
+    app.directive(CcSpinner.directiveId, ["$window", $window => new CcSpinner($window)]);
+}

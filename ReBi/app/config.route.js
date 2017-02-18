@@ -1,5 +1,5 @@
 /// <reference path="../scripts/typings/angularjs/angular.d.ts" />
-'use strict';
+"use strict";
 var App;
 (function (App) {
     var RouteConfigurator = (function () {
@@ -7,7 +7,7 @@ var App;
             routes.forEach(function (r) {
                 $routeProvider.when(r.url, r.config);
             });
-            $routeProvider.otherwise({ redirectTo: '/' });
+            $routeProvider.otherwise({ redirectTo: "/" });
         }
         return RouteConfigurator;
     }());
@@ -17,36 +17,35 @@ var App;
     function getRoutes() {
         return [
             {
-                url: '/',
+                url: "/",
                 config: {
-                    templateUrl: 'app/dashboard/dashboard.html',
-                    title: 'dashboard',
+                    templateUrl: "app/dashboard/dashboard.html",
+                    title: "dashboard",
                     settings: {
                         nav: 1,
-                        content: '<i class="fa fa-dashboard"></i> Dashboard'
+                        content: "<i class=fa fa-dashboard></i> Dashboard"
                     }
                 }
             }, {
-                url: '/admin',
+                url: "/admin",
                 config: {
-                    title: 'admin',
-                    templateUrl: 'app/admin/admin.html',
+                    title: "admin",
+                    templateUrl: "app/admin/admin.html",
                     settings: {
                         nav: 2,
-                        content: '<i class="fa fa-lock"></i> Admin'
+                        content: "<i class=fa fa-lock></i> Admin"
                     }
                 }
             }
         ];
     }
     // Collect the routes
-    App.app.constant('routes', getRoutes());
+    App.app.constant("routes", getRoutes());
     // Configure the routes and route resolvers
     App.app.config([
-        '$routeProvider', 'routes',
+        "$routeProvider", "routes",
         function ($routeProvider, routes) {
             return new RouteConfigurator($routeProvider, routes);
         }
     ]);
 })(App || (App = {}));
-//# sourceMappingURL=config.route.js.map

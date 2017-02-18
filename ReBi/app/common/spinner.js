@@ -1,6 +1,6 @@
 /// <reference path="common.ts" />
 /// <reference path="commonconfig.ts" />
-'use strict';
+"use strict";
 var App;
 (function (App) {
     var Shared;
@@ -19,13 +19,12 @@ var App;
             Spinner.prototype.spinnerToggle = function (show) {
                 this.common.$broadcast(this.commonConfig.config.spinnerToggleEvent, { show: show });
             };
-            Spinner.serviceId = 'spinner';
+            Spinner.serviceId = "spinner";
             return Spinner;
         }());
         Shared.Spinner = Spinner;
-        // Must configure the common service and set its 
+        // Must configure the common service and set its
         // events via the commonConfigProvider
-        Shared.commonModule.factory(Spinner.serviceId, ['common', 'commonConfig', function (c, cC) { return new Spinner(c, cC); }]);
+        Shared.commonModule.factory(Spinner.serviceId, ["common", "commonConfig", function (c, cC) { return new Spinner(c, cC); }]);
     })(Shared = App.Shared || (App.Shared = {}));
 })(App || (App = {}));
-//# sourceMappingURL=spinner.js.map

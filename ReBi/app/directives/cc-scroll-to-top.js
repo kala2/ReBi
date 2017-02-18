@@ -31,3 +31,4 @@ var App;
         App.app.directive(CcScrollToTop.directiveId, ["$window", function ($window) { return new CcScrollToTop($window); }]);
     })(Directives = App.Directives || (App.Directives = {}));
 })(App || (App = {}));
+//# sourceMappingURL=cc-scroll-to-top.js.map

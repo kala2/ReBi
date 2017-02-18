@@ -35,3 +35,4 @@ var App;
         App.app.controller(SidebarCtrl.controllerId, ["$route", "config", "routes", function ($r, c, r) { return new SidebarCtrl($r, c, r); }]);
     })(Controllers = App.Controllers || (App.Controllers = {}));
 })(App || (App = {}));
+//# sourceMappingURL=sidebarCtrl.js.map

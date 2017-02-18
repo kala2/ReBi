@@ -45,3 +45,4 @@ var App;
             function ($rS, com, con) { return new ShellCtrl($rS, com, con); }]);
     })(Controllers = App.Controllers || (App.Controllers = {}));
 })(App || (App = {}));
+//# sourceMappingURL=shellCtrl.js.map

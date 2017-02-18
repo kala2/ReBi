@@ -50,3 +50,4 @@ var App;
         ]);
     })(Controllers = App.Controllers || (App.Controllers = {}));
 })(App || (App = {}));
+//# sourceMappingURL=dashboardCtrl.js.map

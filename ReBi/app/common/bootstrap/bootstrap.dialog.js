@@ -52,3 +52,4 @@ var App;
         Shared.commonBootstrapModule.factory(BootstrapDialog.serviceId, ["$modal", "$templateCache", function (m, tc) { return new BootstrapDialog(m, tc); }]);
     })(Shared = App.Shared || (App.Shared = {}));
 })(App || (App = {}));
+//# sourceMappingURL=bootstrap.dialog.js.map

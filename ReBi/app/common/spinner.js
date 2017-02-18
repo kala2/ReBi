@@ -28,3 +28,4 @@ var App;
         Shared.commonModule.factory(Spinner.serviceId, ["common", "commonConfig", function (c, cC) { return new Spinner(c, cC); }]);
     })(Shared = App.Shared || (App.Shared = {}));
 })(App || (App = {}));
+//# sourceMappingURL=spinner.js.map

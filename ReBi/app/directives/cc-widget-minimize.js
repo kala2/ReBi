@@ -38,3 +38,4 @@ var App;
         App.app.directive(CcWidgetMinimize.directiveId, [function () { return new CcWidgetMinimize(); }]);
     })(Directives = App.Directives || (App.Directives = {}));
 })(App || (App = {}));
+//# sourceMappingURL=cc-widget-minimize.js.map

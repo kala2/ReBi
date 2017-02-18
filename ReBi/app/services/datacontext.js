@@ -31,3 +31,4 @@ var App;
         App.app.factory(Datacontext.serviceId, ["common", function (common) { return new Datacontext(common); }]);
     })(Services = App.Services || (App.Services = {}));
 })(App || (App = {}));
+//# sourceMappingURL=datacontext.js.map

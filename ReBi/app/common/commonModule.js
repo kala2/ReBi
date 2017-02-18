@@ -15,3 +15,4 @@ var App;
         Shared.commonModule = angular.module("common", []);
     })(Shared = App.Shared || (App.Shared = {}));
 })(App || (App = {}));
+//# sourceMappingURL=commonModule.js.map

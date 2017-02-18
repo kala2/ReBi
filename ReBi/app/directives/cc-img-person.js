@@ -24,3 +24,4 @@ var App;
         App.app.directive(CcImgPerson.directiveId, ["config", function (c) { return new CcImgPerson(c); }]);
     })(Directives = App.Directives || (App.Directives = {}));
 })(App || (App = {}));
+//# sourceMappingURL=cc-img-person.js.map

@@ -30,11 +30,11 @@ gulp.task('scripts', ['clean'], function () {
 });
 
 gulp.task('watch', function () {
-    return gulp.watch(config.src, ['scripts', 'app']);
+    return gulp.watch(config.src, ['scripts', 'app', 'content']);
 });
 
 gulp.task('tslint', function () {
-    gulp.src('App/**/*.ts')
+    gulp.src('app/**/*.ts')
         .pipe(tslint({
             formatter: 'msbuild'
         }))

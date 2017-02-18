@@ -49,3 +49,4 @@ var App;
         }
     ]);
 })(App || (App = {}));
+//# sourceMappingURL=config.route.js.map

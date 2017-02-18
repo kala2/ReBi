@@ -155,6 +155,6 @@ G:\ReBi\trunk\ReBi\bin\ko\System.Spatial.resources.dll
 G:\ReBi\trunk\ReBi\bin\ru\System.Spatial.resources.dll
 G:\ReBi\trunk\ReBi\bin\zh-Hans\System.Spatial.resources.dll
 G:\ReBi\trunk\ReBi\bin\zh-Hant\System.Spatial.resources.dll
-G:\ReBi\trunk\ReBi\obj\Debug\ReBi.csprojResolveAssemblyReference.cache
 G:\ReBi\trunk\ReBi\obj\Debug\ReBi.dll
 G:\ReBi\trunk\ReBi\obj\Debug\ReBi.pdb
+G:\ReBi\trunk\ReBi\obj\Debug\ReBi.csprojResolveAssemblyReference.cache

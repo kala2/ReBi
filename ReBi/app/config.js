@@ -36,3 +36,4 @@ var App;
             cfg.config.spinnerToggleEvent = config.events.spinnerToggle;
         }]);
 })(App || (App = {}));
+//# sourceMappingURL=config.js.map

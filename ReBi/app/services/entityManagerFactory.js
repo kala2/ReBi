@@ -34,3 +34,4 @@ var App;
         App.app.factory(EntityManagerFactory.serviceId, ["breeze", "config", function (b, c) { return new EntityManagerFactory(b, c); }]);
     })(Services = App.Services || (App.Services = {}));
 })(App || (App = {}));
+//# sourceMappingURL=entityManagerFactory.js.map

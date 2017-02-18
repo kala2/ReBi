@@ -28,3 +28,4 @@ var App;
         App.app.directive(CcWidgetHeader.directiveId, [function () { return new CcWidgetHeader(); }]);
     })(Directives = App.Directives || (App.Directives = {}));
 })(App || (App = {}));
+//# sourceMappingURL=cc-widget-header.js.map

@@ -15,3 +15,4 @@ var App;
         Shared.commonBootstrapModule = angular.module("common.bootstrap", []);
     })(Shared = App.Shared || (App.Shared = {}));
 })(App || (App = {}));
+//# sourceMappingURL=common.bootstapModule.js.map

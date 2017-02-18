@@ -27,3 +27,4 @@ var App;
         App.app.directive(CcWidgetClose.directiveId, [function () { return new CcWidgetClose(); }]);
     })(Directives = App.Directives || (App.Directives = {}));
 })(App || (App = {}));
+//# sourceMappingURL=cc-widget-close.js.map

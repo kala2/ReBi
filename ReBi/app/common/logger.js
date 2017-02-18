@@ -80,3 +80,4 @@ var App;
         Shared.commonModule.factory(Logger.serviceId, ["$log", function ($log) { return new Logger($log); }]);
     })(Shared = App.Shared || (App.Shared = {}));
 })(App || (App = {}));
+//# sourceMappingURL=logger.js.map

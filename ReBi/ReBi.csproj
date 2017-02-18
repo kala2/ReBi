@@ -166,7 +166,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\admin\admin.html" />
     <Content Include="app\dashboard\dashboard.html" />
     <Content Include="app\layout\shell.html" />
     <Content Include="app\layout\sidebar.html" />
@@ -334,7 +333,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\admin\admin.ts" />
     <TypeScriptCompile Include="app\app.ts" />
     <TypeScriptCompile Include="app\common\bootstrap\bootstrap.dialog.ts" />
     <TypeScriptCompile Include="app\common\bootstrap\common.bootstapModule.ts" />

@@ -30,8 +30,7 @@ namespace App.Controllers {
 
         // TODO: is there a more elegant way of activating the controller - base class?
         activate(promises: Array<ng.IPromise<any>>) {
-            this.common.activateController(promises, this.controllerId)
-                .then(() => { this.log("Activated Dashboard View"); });
+            this.common.activateController(promises, this.controllerId);
         }
 
         //#region Public Methods

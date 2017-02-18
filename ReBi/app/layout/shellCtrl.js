@@ -24,16 +24,10 @@ var App;
                 this.common = common;
                 this.config = config;
                 this.$rootScope = $rootScope;
-                this.activate();
                 this.registerEvents();
             }
             ShellCtrl.prototype.toggleSpinner = function (on) {
                 this.isBusy = on;
-            };
-            ShellCtrl.prototype.activate = function () {
-                var logger = this.common.logger.getLogFn(this.controllerId, "success");
-                logger("Hot Towel Angular loaded!", null, true);
-                this.common.activateController([], this.controllerId);
             };
             ShellCtrl.prototype.registerEvents = function () {
                 var _this = this;

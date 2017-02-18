@@ -45,18 +45,10 @@ namespace App.Controllers {
             this.config = config;
             this.$rootScope = $rootScope;
 
-            this.activate();
             this.registerEvents();
         }
         public toggleSpinner(on: boolean): void {
             this.isBusy = on;
-        }
-
-        private activate() {
-            let logger = this.common.logger.getLogFn(this.controllerId, "success");
-            logger("Hot Towel Angular loaded!", null, true);
-
-            this.common.activateController([], this.controllerId);
         }
 
         private registerEvents() {

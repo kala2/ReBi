@@ -18,9 +18,7 @@ var App;
             }
             // TODO: is there a more elegant way of activating the controller - base class?
             DashboardCtrl.prototype.activate = function (promises) {
-                var _this = this;
-                this.common.activateController(promises, this.controllerId)
-                    .then(function () { _this.log("Activated Dashboard View"); });
+                this.common.activateController(promises, this.controllerId);
             };
             //#region Public Methods
             DashboardCtrl.prototype.getNews = function () {

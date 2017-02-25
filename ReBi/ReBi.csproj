@@ -142,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\all.min.js" />
+    <Content Include="content\images\bg-1-full.jpg" />
     <Content Include="gulpfile.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">

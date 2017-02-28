@@ -9,13 +9,19 @@
                         <img src="../../content/images/re-bi.png" style="height: 80px;" />
                     </div><br /><br />
                     <div class="pull-right">
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal" style="text-decoration: none; outline: 0; outline-style: none;">Existing User</button>
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal2" style="text-decoration: none; outline: 0; outline-style: none;">New User?</button>
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal" style="text-decoration: none; outline: 0; outline-style: none;">Existing User</button>
                     </div>
                 </div>
-                <hr style="height: 1px !important; background-color: black !important;" />
+                <hr style="height: 1px !important; background-color: green !important;" />
                 <span style="font-size: 34px;">Re-Bi</span>
-                <hr style="height: 1px !important; background-color: black !important;" />
+                <br /><br /><br />
+                <p>
+                    Lorem ipsum dolor sit amet consectetuer sed
+                    diam nonumy nibh elit dolore.
+                </p>
+                <br /><br />
+                <hr style="height: 1px !important; background-color: green !important;" />
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row" style="color: #4db3a4;">
@@ -63,41 +69,67 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header text-center">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Login</h4>
+                <h3>Login To <span class="blue">Continue</span></h3>
             </div>
-            <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <div class="modal-body form-group text-center">
+                <form class="form login-form centered-form">
+                    <div class="row body">
+                        <div class="col-sm-8 col-md-8 col-md-offset-2">
+                            <input class="form-control text-center" type="email" placeholder="Email">
+                            <br />
+                            <input class="form-control text-center" type="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row footer">
+                        <div class="col-sm-8 col-md-8 col-md-offset-2">
+                            <label class="checkbox inline">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Remember me
+                            </label>
+                            <button type="submit" class="btn btn-success btn-block">Login</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-
     </div>
 </div>
-
 <!-- Modal -->
 <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header text-center">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Register</h4>
+                <h3>Registration</h3>
             </div>
-            <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <div class="modal-body form-group text-center">
+                <form class="form login-form centered-form">
+                    <div class="row body">
+                        <div class="col-sm-8 col-md-8 col-md-offset-2">
+                            <input class="form-control text-center" type="text" placeholder="First Name">
+                            <br />
+                            <input class="form-control text-center" type="text" placeholder="Last Name">
+                            <br />
+                            <input class="form-control text-center" type="email" placeholder="Email">
+                            <br />
+                            <input class="form-control text-center" type="password" placeholder="Password">
+                            <br />
+                            <input class="form-control text-center" type="password" placeholder="Repeat Password">
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row footer">
+                        <div class="col-sm-8 col-md-8 col-md-offset-2">
+                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-
     </div>
 </div>

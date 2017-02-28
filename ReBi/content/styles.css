@@ -72,7 +72,7 @@ input.form-control,
 select.form-control,
 textarea.form-control {
     /*width: 205px;*/
-    width: 60%;
+    width: 100%;
     display: inline;
     display: block;
 }

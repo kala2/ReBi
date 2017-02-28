@@ -1,36 +1,103 @@
-﻿<script type="text/javascript">
-
-    $(function () {
-        $(".dropdown").hover(
-            function () {
-                $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
-                $(this).toggleClass('open');
-                $('b', this).toggleClass("caret caret-up");
-            },
-            function () {
-                $('.dropdown-menu', this).stop(true, true).fadeOut("fast");
-                $(this).toggleClass('open');
-                $('b', this).toggleClass("caret caret-up");
-            });
-    });
-</script>
-<link href="content/cssnavbar.css" rel="stylesheet" />
-<div class="row centered-form center-block text-center">
+﻿<link href="content/cssnavbar.css" rel="stylesheet" />
+<br />
+<div class="row centered-form center-block text-center" style="font-family: Arial, Helvetica, sans-serif;">
     <div class="container col-md-12 vertical-center">
-        <div class="col-md-3">
+        <div class="col-md-6">
             <div class="well">
-                FLAFLA1
+                <div class="row">
+                    <div class="pull-left">
+                        <img src="../../content/images/re-bi.png" style="height: 80px;" />
+                    </div><br /><br />
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal" style="text-decoration: none; outline: 0; outline-style: none;">Existing User</button>
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal2" style="text-decoration: none; outline: 0; outline-style: none;">New User?</button>
+                    </div>
+                </div>
+                <hr style="height: 1px !important; background-color: black !important;" />
+                <span style="font-size: 34px;">Re-Bi</span>
+                <hr style="height: 1px !important; background-color: black !important;" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row" style="color: #4db3a4;">
+                            <div class="col-md-4">
+                                <font size="3" style="font-size: 14px;">
+                                    <strong>
+                                        Store the materials
+                                    </strong>
+                                    <br /><br />
+                                    <p style="color: #98a7b9;">
+                                        Lorem ipsum dolor sit amet consectetuer sed et diam noumy elit dolore
+                                    </p>
+                                </font>
+                            </div>
+                            <div class="col-md-4">
+                                <font size="3" style="font-size: 14px;">
+                                    <strong>
+                                        Recycle them
+                                    </strong>
+                                    <br /><br />
+                                    <p style="color: #98a7b9;">
+                                        Lorem ipsum dolor sit amet consectetuer sed et diam noumy elit dolore
+                                    </p>
+                                </font>
+                            </div>
+                            <div class="col-md-4">
+                                <font size="3" style="font-size: 14px;">
+                                    <strong>
+                                        Statistics
+                                    </strong>
+                                    <br /><br />
+                                    <p style="color: #98a7b9;">
+                                        Lorem ipsum dolor sit amet consectetuer sed et diam noumy elit dolore
+                                    </p>
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br /><br /><br /><br />
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Login</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="well">
-                FLAFLA2
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Register</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="well">
-                FLAFLA3
-            </div>
-        </div>
+
     </div>
 </div>

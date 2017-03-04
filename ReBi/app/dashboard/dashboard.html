@@ -15,7 +15,12 @@
                 </div>
                 <hr style="height: 1px !important; background-color: green !important;" />
                 <span style="font-size: 34px;">Re-Bi</span>
-                <br /><br /><br />
+                <br/><br/><br/>
+                <div ng-controller="UserController">
+                    <div ng-repeat="user in users">
+                            <p>{{user}}</p>
+                    </div>
+                </div>
                 <p>
                     Lorem ipsum dolor sit amet consectetuer sed
                     diam nonumy nibh elit dolore.

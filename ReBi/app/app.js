@@ -18,5 +18,14 @@ var App;
     App.app.run(["$route", function ($route) {
             // Include $route to kick start the router.
         }]);
+    App.app.controller("UserController", function ($scope, $http) {
+        $http.get('http://localhost:59753/api/users').
+            success(function (data, status, headers, config) {
+            $scope.users = data;
+        }).
+            error(function (data, status, headers, config) {
+            alert("error");
+        });
+    });
 })(App || (App = {}));
 //# sourceMappingURL=app.js.map
